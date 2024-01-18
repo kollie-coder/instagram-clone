@@ -1,0 +1,38 @@
+import { Button, Input } from '@chakra-ui/react'
+import React, { useState } from 'react'
+
+const Login = () => {
+
+    const [inputs, setInput] = useState({
+        email:'',
+        password:'',
+        })
+
+  return (
+    <>
+    <Input
+        placeholder='Email'
+        fontSize={14}
+        type='email'
+        size={"sm"}
+        value={inputs.email}
+        onChange={(e) =>setInput({...inputs,email:e.target.value})} 
+        />
+
+      <Input
+        placeholder='Password'
+        fontSize={14}
+        type='password'
+        size={"sm"}
+        value={inputs.password}
+        onChange={(e) =>setInput({...inputs,password:e.target.value})}
+        />
+
+     <Button w={"full"} colorScheme='blue' size={"sm"} fontSize={14}>
+            Log in
+        </Button>
+    </>
+  )
+}
+
+export default Login
