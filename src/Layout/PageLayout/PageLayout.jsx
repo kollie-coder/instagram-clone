@@ -64,7 +64,7 @@ const PageLayout = ({children}) => {
 
 
    
- <Box position={"sticky"} bottom={0} left={0} right={0} zIndex={10} bg="rgba(0, 0, 0, 0.8)" display={{base:"block",md:"none"}}>
+ <Box position={"sticky"} bottom={0} left={0} right={0} bg="#000" display={{base:"block",md:"none"}}>
         <MobileNavigation/>
        </Box>
   

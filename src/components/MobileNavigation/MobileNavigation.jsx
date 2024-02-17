@@ -9,7 +9,7 @@ import { Flex } from '@chakra-ui/react'
 const MobileNavigation = () => {
   return (
     <>
-    <Flex justifyContent={"space-between"} px={4} borderY={"2px solid"} borderColor={"whiteAlpha.300"}>
+    <Flex justifyContent={"space-between"} px={4} borderY={"1px solid"} borderColor={"whiteAlpha.300"}>
         <HomeMobile/>
         <SearchMobile/>
         <NotificationMobile/>
