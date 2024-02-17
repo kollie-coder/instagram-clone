@@ -21,6 +21,7 @@ const Sidebar = () => {
       top={0}
       left={0}
       px={{base:2, md:4}}
+      display={{base:"none", md:"block"}}
       >
         <Flex direction={"column"} gap={10} w="full" height={"full"}>
          <Link to={"/"} as={RouterLink} pl={2} display={{base:"none",md:"block"}} cursor="pointer">

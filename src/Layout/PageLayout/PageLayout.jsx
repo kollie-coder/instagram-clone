@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../../firebase/firebase'
 import Navbar from '../../components/Navbar/Navbar'
+import MobileNavigation from '../../components/MobileNavigation/MobileNavigation'
 
 //instead of adding the sidebar component to every page, we can add it only once to the PageLayout component and wrap the children with it. This way, we can have a sidebaron every page except the AuthPage.
 
@@ -27,13 +28,24 @@ const PageLayout = ({children}) => {
    
   return (
 
- <Flex flexDir={canRenderNavbar ? "column" : "row"}>
+   <>
+   
+       <Flex flexDir={canRenderNavbar ? "column" : "row"}>
     {/* sidebar on the left */}
+
+     {/* initially we had 
+   <Box w={{base:"70px", md:"240px"}}>
+       <Sidebar/>
+   </Box>
+   */}
      
     {canRenderSidebar ? (
-    <Box w={{base:"70px", md:"240px"}}>
+     
+   <Box w={{base:"0px", md:"240px"}}>
        <Sidebar/>
-   </Box> 
+   </Box>
+      
+     
     ) : null}
 
     {/* Navbar */}
@@ -46,7 +58,19 @@ const PageLayout = ({children}) => {
     <Box flex={1} w={{base:"calc(100% - 70px)", md:"calc(100% - 240px)"}} mx={"auto"}>
        {children}
     </Box>
+
+   
  </Flex>
+
+
+   
+ <Box position="fixed" bottom={0} left={0} right={0} display={{base:"block",md:"none"}}>
+        <MobileNavigation/>
+       </Box>
+  
+
+</>
+
   )
 }
 
@@ -59,5 +83,8 @@ const PageLayoutSpinner = () => {
       justifyContent="center">
          <Spinner size="xl" />
       </Flex>
+   
+
+
    )
 }
